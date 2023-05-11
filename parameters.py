@@ -30,4 +30,4 @@ def getParams(name):
     result = pd.DataFrame(result)
     result.columns = [desc[0] for desc in cursor.description]
     db.close()
-    return extract_data(result['gpt'][0].decode("utf-8"))
+    return extract_data(result['gpt'][0])
