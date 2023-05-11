@@ -28,6 +28,6 @@ def getParams(name):
     cursor.execute(sql)
     result = cursor.fetchall()
     result = pd.DataFrame(result)
-    result.columns = cursor.column_names
+    result.columns = [desc[0] for desc in cursor.description]
     db.close()
     return extract_data(result['gpt'][0].decode("utf-8"))
