@@ -24,7 +24,7 @@ def extract_data(data: str):
 def getParams(name):
     db = connect()
     cursor = db.cursor()
-    sql = f"SELECT * FROM `parameters` WHERE fullname = '{name}'"
+    sql = f"SELECT * FROM parameters WHERE fullname = '{name}'"
     cursor.execute(sql)
     result = cursor.fetchall()
     result = pd.DataFrame(result)
