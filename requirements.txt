@@ -1,5 +1,5 @@
 beautifulsoup4==4.11.1
-https://files.pythonhosted.org/packages/ac/b1/5cd6ee1bc750436e1ad2ca1e63d55c7611041c3d047f90123d28eaffc5e4/mysql-connector-python-8.0.33.tar.gz
+mysql-connector-python
 plotly==5.9.0
 Requests==2.30.0
 scikit_learn==1.0.2
