@@ -4,11 +4,22 @@ import re
 
 
 def extract_data(data: str):
-    s = data.split('\n')
+    s = data.split('\\n')
     d = {}
     for x in s:
         if ':' in x:
             atr, val = (x.replace(';', '').strip() for x in x.split(':', 1))
+            if re.match('^\d+\.', atr):
+                atr = atr.split('.', 1)[1]
+            if re.match('^\d+\)', atr):
+                atr = atr.split(')', 1)[1]
+            if re.match('\-\ ', atr):
+                atr = atr.split('-', 1)[1]
+            if val == '':
+                continue
+            d[atr.strip()] = val.strip()
+        elif '=' in x:
+            atr, val = (x.replace(';', '').strip() for x in x.split('=', 1))
             if re.match('^\d+\.', atr):
                 atr = atr.split('.', 1)[1]
             if re.match('^\d+\)', atr):
