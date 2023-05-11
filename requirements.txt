@@ -1,5 +1,4 @@
 beautifulsoup4==4.11.1
-pandas==1.4.4
 plotly==5.9.0
 psycopg2==2.9.6
 Requests==2.30.0
