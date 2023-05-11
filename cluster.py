@@ -14,7 +14,7 @@ def getAllClusters():
 def getClusterContains(cluster_name):
     db = connect()
     cursor = db.cursor()
-    sql = f"SELECT DISTINCT subcluster FROM `clusters` WHERE cluster = '{cluster_name}' ORDER BY subcluster"
+    sql = f"SELECT DISTINCT subcluster FROM clusters WHERE cluster = '{cluster_name}' ORDER BY subcluster"
     cursor.execute(sql)
     result = [int(x[0]) for x in cursor.fetchall()]
     db.close()
@@ -24,7 +24,7 @@ def getClusterContains(cluster_name):
 def getSubclusterContains(cluster_name, subclust):
     db = connect()
     cursor = db.cursor()
-    sql = f"SELECT * FROM `clusters` WHERE cluster = '{cluster_name}' AND subcluster = '{subclust}'"
+    sql = f"SELECT * FROM clusters WHERE cluster = '{cluster_name}' AND subcluster = '{subclust}'"
     cursor.execute(sql)
     result = cursor.fetchall()
     result = pd.DataFrame(result)
