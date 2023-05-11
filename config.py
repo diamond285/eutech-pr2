@@ -1,11 +1,16 @@
-import mysql
+import psycopg2
 
 
 def connect():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="nomens",
-        charset='utf8'
-    )
+    return psycopg2.connect(database="nomens",
+                            host="rx4ra5ixGSZ6uCQyMoMXScaWN36sElkh@dpg-che690t269v75d2ph15g-a.oregon-postgres.render.com",
+                            user="nomens_user",
+                            password="rx4ra5ixGSZ6uCQyMoMXScaWN36sElkh",
+                            port="5432")
+    # return mysql.connector.connect(
+    #    host="localhost",
+    #    user="root",
+    #    password="root",
+    #    database="nomens",
+    #    charset='utf8'
+    #)
