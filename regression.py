@@ -25,7 +25,7 @@ def getInfo(name):
     cursor.execute(sql)
     result = cursor.fetchall()
     result = pd.DataFrame(result)
-    result.columns = cursor.column_names
+    result.columns = [desc[0] for desc in cursor.description]
     db.close()
     return result
 
